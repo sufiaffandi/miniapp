@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental PS</title>
+</head>
+
+<body>
+    <h1>RENTAL PS</h1>
+    Nama :<br>
+    <input type="text" name=""><br>
+    Jam :<br>
+    <input type="text" id="jam"><br>
+    Jenis :<br>
+    <select id="jenis">
+        <option value="ps3">PS 3</option>
+        <option value="ps4">PS 4</option>
+    </select><br>
+    Bayar : <label id="bayar">...</label>
+    <button onclick="cek()">Hasil</button>
+    <script type="text/javascript">
+        function cek() {
+            var jam = parseInt(document.getElementById('jam').value);
+            var jenis = document.getElementById('jenis').value;
+            var bayar;
+
+            if (jam <= 3) {
+                if (jenis == 'ps3') {
+                    bayar = 4000 * jam;
+
+                } else {
+
+                    if (jenis == 'ps4') {
+                        bayar = 5000 * jam;
+                    }
+                }
+
+            } else {
+
+                if (jenis == 'ps3') {
+                    bayar = 4000 * jam - 2000;
+
+                } else {
+
+                    if (jenis == 'ps4') {
+                        bayar = 5000 * jam - 2000;
+                    }
+                }
+            } document.getElementById('bayar').innerHTML = bayar;
+        }
+    </script>
+    <br>
+    <br>
+</body>
+
+</html>
